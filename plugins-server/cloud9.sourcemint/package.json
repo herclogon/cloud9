@@ -1,18 +1,25 @@
 {
-    "name": "cloud9.sourcemint",
-    "version": "0.0.1",
-    "main": "sourcemint.js",
-    "private": true,
-    "dependencies": {
-        "sourcemint-loader-js": "0.x",
-        "sourcemint-platform-nodejs": "0.x"
-    },
-
-    "plugin": {
-        "provides": ["sourcemint"],
-        "consumes": [
-            "log",
-            "connect"
-        ]
-    }
+  "name": "cloud9.sourcemint",
+  "version": "0.0.1",
+  "main": "sourcemint.js",
+  "private": true,
+  "dependencies": {
+    "sourcemint-loader-js": "0.x",
+    "sourcemint-platform-nodejs": "0.x",
+    "snyk": "^1.104.2"
+  },
+  "plugin": {
+    "provides": [
+      "sourcemint"
+    ],
+    "consumes": [
+      "log",
+      "connect"
+    ]
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }
